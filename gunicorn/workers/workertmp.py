@@ -32,7 +32,7 @@ class WorkerTmp(object):
         try:
             if not IS_CYGWIN:
                 util.unlink(name)
-            self._tmp = os.fdopen(fd, 'w+b', 1)
+            self._tmp = os.fdopen(fd, 'w+b', 0)
         except:
             os.close(fd)
             raise
